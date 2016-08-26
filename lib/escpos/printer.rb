@@ -6,7 +6,12 @@ module Escpos
     
     def initialize(command_set: :esc_pos)
       
-      @command_set = EscPos
+      @command_set = case command_set
+      when :esc_p
+        EscP
+      else
+        EscPos
+      end
       
       # ensure only supported sequences are generated
       @data = "".force_encoding("ASCII-8BIT")
