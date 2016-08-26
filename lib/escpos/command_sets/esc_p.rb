@@ -4,6 +4,8 @@ module EscP
   
   # Printer hardware
   HW_INIT                      = [ 0x1b, 0x40 ]             # Clear data in buffer and reset modes
+  HW_SET_ESCP_MODE             = [ 0x1B, 0x69, 0x61, 0x00]  # Sets the command mode to ESC/P
+  
   # HW_SELECT                    = [ 0x1b, 0x3d, 0x01 ]       # Printer select
   # HW_RESET                     = [ 0x1b, 0x3f, 0x0a, 0x00 ] # Reset printer hardware
 
@@ -16,6 +18,10 @@ module EscP
 
   # Paper
   PAPER_FULL_CUT               = [ 0x1b, 0x69, 0x43, 0x49 ]			   # Full paper cut # TODO check
+  LANDSCAPE                    = [ 0x1B, 0x69, 0x4C, 0x01 ]        # Select landscape orientation
+  PAGE_LENGTH                  = [ 0x1B, 0x28, 0x43, 0x02, 0x00, 0x6A, 0x04]
+  ABSOLUTE_VERTICAL_POSITION   = [ 0x1B, 0x28, 0x56, 0x02, 0x00, 0x1C, 0x02]
+  ABSOLUTE_HORIZONTAL_POSITION   = [ 0x1B, 0x24, 0x2C, 0x01]
   # PAPER_PARTIAL_CUT            = [ 0x1d, 0x56, 0x01 ]			   # Partial paper cut
 
   # Cash Drawer
@@ -37,6 +43,8 @@ module EscP
   TXT_ALIGN_LT                 = [ 0x1b, 0x61, 0x00 ]        # Left justification
   TXT_ALIGN_CT                 = [ 0x1b, 0x61, 0x01 ]        # Centering
   TXT_ALIGN_RT                 = [ 0x1b, 0x61, 0x02 ]        # Right justification
+  TXT_FONT_HELSINKI            = [ 0x1b, 0x6b, 0x0b ]        # Select Helsinky font
+  TXT_CHARACTER_SIZE           = [ 0x1B, 0x58, 0x00, 0x64, 0x00] # Set Character size
 
   # Barcodes
   # BARCODE_TXT_OFF             = [ 0x1d, 0x48, 0x00 ]         # HRI barcode chars OFF
