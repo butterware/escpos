@@ -7,7 +7,7 @@ class TestReport < Minitest::Test
 
   def test_styles
     report_klass = Class.new(Escpos::Report)
-    report_klass.class_eval do
+    report_klass.class_exec do
       def item(text)
         @count ||= 0
         @count += 1
