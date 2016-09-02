@@ -30,5 +30,5 @@ report = MyReport.new File.join(__dir__, 'simple.erb'), printer: @printer
 # @printer.cut!
 
 # @printer.to_escpos or @printer.to_base64 contains resulting ESC/POS data
-puts @printer.to_escpos.inspect
+# puts @printer.to_escpos.inspect
 puts @printer.to_base64

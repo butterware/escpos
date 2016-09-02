@@ -23,6 +23,11 @@ module EscP
   ABSOLUTE_VERTICAL_POSITION   = [ 0x1B, 0x28, 0x56, 0x02, 0x00, 0x1C, 0x02]
   ABSOLUTE_HORIZONTAL_POSITION   = [ 0x1B, 0x24, 0x2C, 0x01]
   # PAPER_PARTIAL_CUT            = [ 0x1d, 0x56, 0x01 ]			   # Partial paper cut
+  MARGIN_LEFT_ZERO             = [ 0x1b, 0x6c, 0 ]
+
+  # Line feed commands
+  LINE_FEED_8                   = [ 0x1b, 0x33, 8 ]
+  LINE_FEED_24                  = [ 0x1b, 0x33, 24 ]
 
   # Cash Drawer
   # CD_KICK_2                    = [ 0x1b, 0x70, 0x00 ]			   # Send pulse to pin 2
@@ -64,6 +69,7 @@ module EscP
   # BARCODE_NW7                 = [ 0x1d, 0x6b, 0x06 ]         # Barcode type NW7
 
   # Images
-  IMAGE                      = [ 0x1d, 0x76, 0x30, 0x00 ]    # Start image pixel data
+  IMAGE                      = [ 0x1b, 0x2a, 0 ]    # Start image pixel data
+  IMAGE_STANDARD_DENSITY     = [ 0x1b, 0x4b ]    # Start image pixel data
   
 end
